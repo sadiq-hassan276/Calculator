@@ -1,0 +1,148 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1e1e1e; /* Darker background for the body */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.calculator {
+  width: 360px; /* Adjusted width */
+  background-color: #2e2e2e; /* Darker background for calculator */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  position: relative;
+}
+
+.calculator-display {
+  background-color: #282c34; /* Darker display background */
+  color: #ffffff; /* White text color */
+  padding: 10px;
+  border-radius: 8px;
+  text-align: right;
+  overflow: hidden;
+}
+
+.input {
+  font-size: 1.5rem; /* Adjusted font size for input */
+  color: #b8b8b8; /* Lighter grey color for input */
+  min-height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result {
+  font-size: 2rem; /* Adjusted font size for result */
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Calculator Buttons */
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px; /* Smaller gap between buttons */
+  margin-top: 10px;
+}
+
+button.btn {
+  padding: 12px; /* Smaller padding */
+  font-size: 16px; /* Smaller font size */
+  background-color: #4c4c4c; /* Dark button background */
+  color: #ffffff; /* White text color */
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+button.operator {
+  background-color: #ff9500; /* Highlighted operator button */
+}
+
+button#equals {
+  background-color: #28a745; /* Green for equals button */
+  grid-column: span 2; /* Spanning two columns */
+}
+
+button#clear {
+  background-color: #dc3545; /* Red for clear button */
+}
+
+button#delete {
+  background-color: #6c757d; /* Grey for delete button */
+}
+
+/* Button hover effects */
+button.btn:hover {
+  background-color: #5a5a5a; /* Darker shade for hover */
+}
+
+button.operator:hover {
+  background-color: #cc7a00; /* Darker shade for operator hover */
+}
+
+button#equals:hover {
+  background-color: #218838; /* Darker green for equals hover */
+}
+
+button#clear:hover {
+  background-color: #c82333; /* Darker red for clear hover */
+}
+
+button#delete:hover {
+  background-color: #5a6268; /* Darker grey for delete hover */
+}
+
+/* History Section */
+.history {
+  margin-top: 10px;
+  max-height: 0; /* Initially hidden */
+  overflow: hidden;
+  border: 1px solid #ddd; /* Border color */
+  border-radius: 8px;
+  padding: 0;
+  background-color: #f9f9f9; /* Light background for history */
+  transition: max-height 0.2s ease; /* Smooth transition for history */
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe; /* Light background for modal */
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
