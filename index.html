@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.5.1/math.min.js"></script> <!-- Math.js Library -->
+</head>
+<body>
+  <div class="calculator">
+    <div class="calculator-display">
+      <div id="display-input" class="input">0</div> <!-- Input area -->
+      <div id="display-result" class="result">0</div> <!-- Result area -->
+    </div>
+
+    <div class="calculator-buttons">
+      <!-- Scientific Functions -->
+      <button class="btn" data-value="sin(" onclick="appendToInput('sin(')">sin</button>
+      <button class="btn" data-value="cos(" onclick="appendToInput('cos(')">cos</button>
+      <button class="btn" data-value="tan(" onclick="appendToInput('tan(')">tan</button>
+      <button class="btn" data-value="asin(" onclick="appendToInput('asin(')">asin</button>
+      <button class="btn" data-value="acos(" onclick="appendToInput('acos(')">acos</button>
+      <button class="btn" data-value="atan(" onclick="appendToInput('atan(')">atan</button>
+      <button class="btn" data-value="log(" onclick="appendToInput('log(')">log</button>
+      <button class="btn" data-value="sqrt(" onclick="appendToInput('sqrt(')">√</button>
+      <button class="btn" data-value="pi" onclick="appendToInput(Math.PI)">π</button>
+      <button class="btn" data-value="e" onclick="appendToInput(Math.E)">e</button>
+      <button class="btn" data-value="exp(" onclick="appendToInput('exp(')">exp</button>
+      <button class="btn" data-value="(" onclick="appendToInput('(')">(</button>
+      <button class="btn" data-value=")" onclick="appendToInput(')')">)</button>
+
+      <!-- Basic Numbers -->
+      <button class="btn" data-value="7" onclick="appendToInput('7')">7</button>
+      <button class="btn" data-value="8" onclick="appendToInput('8')">8</button>
+      <button class="btn" data-value="9" onclick="appendToInput('9')">9</button>
+      <button class="btn operator" data-value="/" onclick="appendToInput('/')">/</button>
+
+      <button class="btn" data-value="4" onclick="appendToInput('4')">4</button>
+      <button class="btn" data-value="5" onclick="appendToInput('5')">5</button>
+      <button class="btn" data-value="6" onclick="appendToInput('6')">6</button>
+      <button class="btn operator" data-value="*" onclick="appendToInput('x')">x</button>
+
+      <button class="btn" data-value="1" onclick="appendToInput('1')">1</button>
+      <button class="btn" data-value="2" onclick="appendToInput('2')">2</button>
+      <button class="btn" data-value="3" onclick="appendToInput('3')">3</button>
+      <button class="btn operator" data-value="-" onclick="appendToInput('-')">-</button>
+
+      <button class="btn" data-value="0" onclick="appendToInput('0')">0</button>
+      <button class="btn" data-value="." onclick="appendToInput('.')">.</button>
+      <button class="btn" id="clear" onclick="clearInput()">C</button>
+      <button class="btn operator" data-value="+" onclick="appendToInput('+')">+</button>
+
+      <!-- Additional Operations -->
+      <button class="btn" id="power" onclick="showPowerInput()">x^y</button> <!-- Power button -->
+      <button class="btn" id="delete" onclick="deleteLast()">DEL</button>
+      <button class="btn" id="equals" onclick="calculateResult()">=</button>
+      <button class="btn" id="log" onclick="toggleHistory()">history</button>
+    </div>
+
+    <div id="history" class="history"></div> <!-- History section -->
+
+    <!-- Power Input Modal -->
+    <div id="power-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closePowerInput()">&times;</span>
+        <h2>Select Base and Exponent</h2>
+        <div>
+          <input type="number" id="base-input" placeholder="Base (x)" />
+          <input type="number" id="exponent-input" placeholder="Exponent (y)" />
+          <button id="calculate-power" onclick="calculatePower()">Calculate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
